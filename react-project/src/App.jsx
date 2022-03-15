@@ -1,45 +1,55 @@
 import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import Showinfo from '../components/showinfor';
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const products = [
+  //   {
+  //     id: 1,
+  //     name: "Product A",
+  //   },
+  //   {
+  //     id:2,
+  //     name: "Product B",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Product C",
+  //   },
+
+  // ]
+
+  const [count, setCout] = useState(0);
+  const [myName, setMyName] = useState("Dat");
+  const [status, setStatus] = useState(false);
+  const [product, setProduct] = useState([
+        {
+          id: 1,
+          name: "Product A",
+        },
+        {
+          id:2,
+          name: "Product B",
+        },
+        {
+          id: 3,
+          name: "Product C",
+        },
+  ]);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.!!!
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div>
+      Count: {count} <button onClick={() => setCout(count + 1)}>Click</button>
+      <hr />
+      {myName}<button onClick={() => setMyName("kien")}>Change Name</button>
+      <hr />
+      <button onClick={() => setStatus(!status)}>Toggled</button>
+      <hr />
+      {status ? product.map((item, index) => <div key={index}>{item.name}</div>) : ""}
+      <Showinfo name="Dat" />
+      <Showinfo name="Kien" />
+      <Showinfo name="Tuan" />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
