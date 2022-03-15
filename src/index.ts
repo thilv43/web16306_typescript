@@ -20,6 +20,10 @@ const product: Product[] = [
         {
             id: 2,
             name: "Products B",
+        },
+        {
+            id: 3,
+            name: "Products C",
         }
 ]
 function getProducts(product: Product[]):string {
