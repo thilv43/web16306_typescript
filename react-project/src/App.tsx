@@ -3,14 +3,15 @@ import Showinfo from './components/showinfor';
 import { list , remove} from './api/product';
 import axios from 'axios';
 import type { IProduct} from './types/product';
-import { NavLink, Route, Router, Routes } from 'react-router-dom';
+import { NavLink, Route, Navigate, Routes } from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Home from "./pages/Home";
+import Dashboard from 
 
 
 
 
-
-
-function App() {
+function App(): any {
   const [count, setCount] =  useState(0);
   const [products, setProducts] = useState<IProduct[]>([]);
 
